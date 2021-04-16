@@ -9,7 +9,7 @@ public class CatController : MonoBehaviour
     public static CatController instance;
 
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private Vector2 initPos = Vector2.zero; // The initial position when game starts.
+    [SerializeField] private Vector2 initPos = Vector2.zero; // Initial position when game starts.
 
     private Animator anim;
     private Rigidbody2D rb;
