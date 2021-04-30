@@ -7,7 +7,6 @@ TagManager:
   - Lock
   - Puzzle
   - Collider
-  - UI
   layers:
   - Default
   - TransparentFX
