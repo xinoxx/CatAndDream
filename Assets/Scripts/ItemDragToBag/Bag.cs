@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class Bag : MonoBehaviour, IDropHandler
 {
-    public List<Item> myBag = new List<Item>();
-    public bool isAdded = false;
+    [HideInInspector] public List<Item> myBag = new List<Item>();
+    [HideInInspector] public bool isAdded = false;
         
     public void OnDrop(PointerEventData eventData)
     {
-        Item item = eventData.pointerDrag.GetComponent<UIDragController>().thisItem;
+        Item item = eventData.pointerDrag.GetComponent<DragItem>().thisItem;
         InventoryManager.CreateNewItem(item);
         myBag.Add(item);
         isAdded = true;

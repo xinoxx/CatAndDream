@@ -53,11 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Inventory\InventoryScripts\EmptySecretBox.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\Inventory.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\InventoryManager.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\Item.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\ItemInWorld.cs" />
+     <Compile Include="Assets\Inventory\InventoryScripts\ItemText.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\Slot.cs" />
      <Compile Include="Assets\Scripts\AnimControl\CloudAnimation.cs" />
      <Compile Include="Assets\Scripts\AnimControl\ScreenFader.cs" />
@@ -65,22 +65,24 @@
      <Compile Include="Assets\Scripts\AnimControl\VideoTransition.cs" />
      <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
      <Compile Include="Assets\Scripts\Controller\CatController.cs" />
-     <Compile Include="Assets\Scripts\Controller\CursorController.cs" />
      <Compile Include="Assets\Scripts\Controller\DoorController.cs" />
      <Compile Include="Assets\Scripts\Controller\MouseControl.cs" />
      <Compile Include="Assets\Scripts\Controller\PuzzleController.cs" />
+     <Compile Include="Assets\Scripts\Divination\DivinationAnimEvent.cs" />
+     <Compile Include="Assets\Scripts\Divination\DivinationBook.cs" />
+     <Compile Include="Assets\Scripts\Divination\DivinationGame.cs" />
      <Compile Include="Assets\Scripts\GameMenu\SaveGame.cs" />
+     <Compile Include="Assets\Scripts\ItemDragToBag\Bag.cs" />
+     <Compile Include="Assets\Scripts\ItemDragToBag\DragItem.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Managers\LoadManager.cs" />
      <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\UiCursorManager.cs" />
      <Compile Include="Assets\Scripts\Obsoleting\CatMovementByMouse.cs" />
      <Compile Include="Assets\Scripts\Obsoleting\ItemController.cs" />
-     <Compile Include="Assets\Scripts\UI\Bag.cs" />
-     <Compile Include="Assets\Scripts\UI\CheckSecret.cs" />
-     <Compile Include="Assets\Scripts\UI\DivinationGame.cs" />
-     <Compile Include="Assets\Scripts\UI\ItemText.cs" />
-     <Compile Include="Assets\Scripts\UI\SecretNum.cs" />
-     <Compile Include="Assets\Scripts\UI\UIDragController.cs" />
+     <Compile Include="Assets\Scripts\SecretBox\CheckSecret.cs" />
+     <Compile Include="Assets\Scripts\SecretBox\EmptySecretBox.cs" />
+     <Compile Include="Assets\Scripts\SecretBox\SecretNum.cs" />
      <Compile Include="Assets\Scripts\Utils\SortingLayer.cs" />
      <Compile Include="Assets\Scripts\Utils\TagContants.cs" />
  <Reference Include="Unity.Timeline.Editor">

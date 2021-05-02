@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CursorController : MonoBehaviour
+public class UiCursorManager : MonoBehaviour
 {
     [SerializeField] private Texture2D cursorTexture = null;
 

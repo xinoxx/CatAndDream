@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIDragController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class DragItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [SerializeField] private Canvas canvas = null;
-    private RectTransform rectTrans;
-    private CanvasGroup canvasGroup;
+    public Canvas canvas;
     public Item thisItem;
+
+    private RectTransform rectTrans;
+    private Vector2 originalPos;
+    private CanvasGroup canvasGroup;
 
     void Start()
     {
         rectTrans = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        originalPos = rectTrans.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -31,5 +34,21 @@ public class UIDragController : MonoBehaviour, IDragHandler, IBeginDragHandler, 
     {
         // Recover the raycast of gameObject.
         canvasGroup.blocksRaycasts = true;
+        IsInBagScale();
+    }
+
+    private void IsInBagScale()
+    {
+        Vector2 minPos, maxPos;
+        minPos = new Vector2(384.0f, 268.0f);
+        maxPos = new Vector2(572.0f, 321.0f);
+
+        // If it is not draged to the range of bag.
+        if (!(rectTrans.position.x >= minPos.x && rectTrans.position.y >= minPos.y &&
+              rectTrans.position.x <= maxPos.x && rectTrans.position.y <= maxPos.y))
+        {
+            // Back to the original position.
+            rectTrans.position = originalPos;
+        }
     }
 }
