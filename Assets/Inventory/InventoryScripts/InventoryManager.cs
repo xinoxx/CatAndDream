@@ -18,7 +18,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (instance != this) Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()

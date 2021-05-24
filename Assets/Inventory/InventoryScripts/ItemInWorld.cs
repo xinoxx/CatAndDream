@@ -20,40 +20,55 @@ public class ItemInWorld : MonoBehaviour
 
     void Update()
     {
-        if (myBag != null && myBag.isAdded && checkObject!=null && checkObject.gameObject.activeSelf)
-        {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            Destroy(checkObject.gameObject);
-            myBag.isAdded = false;
-            isShowing = false;
-            inScale = false;
-            if (emptySecretBox!=null)
-            {
-                emptySecretBox.ChangeSecretBoxToEmpty();
-            }    
-            Destroy(gameObject);
-        }
+        CloseObjectDetail();
+        ShowObjectDetail();
+    }
 
+    private void ShowObjectDetail()
+    {
         if (inScale)
         {
             // If player presses F key, the item detail picture will be shown in the screen.
-            if (Input.GetKey(KeyCode.F) && checkHint.activeSelf && !checkObject.activeSelf)
+            if (Input.GetKey(KeyCode.F) && !checkObject.activeSelf)
             {
                 isShowing = true;
-                checkHint.SetActive(false);
                 checkObject.SetActive(true);
             }
         }
 
-        // Disable checkObject if player moves when the checkObject is poping up.
+        // Disable checkhint.
+        if (checkObject.activeSelf && checkHint.activeSelf)
+        {
+            checkHint.SetActive(false);
+        }
+
+        // Disable checkObject if player moves when the checkObject is showing.
         if (isShowing)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||
-                Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) )
+                Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                 checkObject.SetActive(false);
                 isShowing = false;
             }
+        }
+    }
+
+    private void CloseObjectDetail()
+    {
+        if (myBag != null && myBag.isAdded && checkObject != null && checkObject.gameObject.activeSelf)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            checkObject.gameObject.SetActive(false);
+            myBag.isAdded = false;
+            isShowing = false;
+            inScale = false;
+            if (emptySecretBox != null)
+            {
+                emptySecretBox.ChangeSecretBoxToEmpty();
+            }
+            gameObject.SetActive(false);
         }
     }
 

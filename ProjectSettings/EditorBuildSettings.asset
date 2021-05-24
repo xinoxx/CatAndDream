@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Anim01.unity
     guid: 159c9789e59f88b4f9ee34f599d468e9
   - enabled: 1
-    path: Assets/Scenes/Ch01_00.unity
+    path: Assets/Scenes/Ch01_Home.unity
     guid: 0722756768e218444946a9e0f91927f4
   - enabled: 1
-    path: Assets/Scenes/Ch01_01.unity
+    path: Assets/Scenes/Ch01_Middle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Ch01_Dream.unity
+    guid: 43b5e50f2257bca4e88d133c0bfcdcc6
   m_configObjects: {}

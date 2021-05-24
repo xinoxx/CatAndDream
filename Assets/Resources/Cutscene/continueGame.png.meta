@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: e007b0daaf3305b4eae73424aea43564
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8429692151807551421
+    second: continueGame_0
+  - first:
+      213: 8096060932595583298
+    second: continueGame_1
+  - first:
+      213: 4176181349342130766
+    second: continueGame_2
+  - first:
+      213: -3177381576712507982
+    second: continueGame_3
+  - first:
+      213: -3592965311147038830
+    second: continueGame_4
+  - first:
+      213: -3476063432020865609
+    second: continueGame_5
+  - first:
+      213: 7048421474521775034
+    second: continueGame_6
+  - first:
+      213: -3808450857065893963
+    second: continueGame_7
+  - first:
+      213: -2003361639505271430
+    second: continueGame_8
+  - first:
+      213: -3478674770195928441
+    second: continueGame_9
+  - first:
+      213: -1309046173574958558
+    second: continueGame_10
+  - first:
+      213: -2116666375466457277
+    second: continueGame_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: continueGame_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b85d296c8ca93428c0bdb6b3c23dd9
+      internalID: 8429692151807551421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_1
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 320
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c8c39b531adc7459beb1471c0721b1
+      internalID: 8096060932595583298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_2
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 320
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee1ba6abaa67ab418a0ae4b571fe438
+      internalID: 4176181349342130766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_3
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 320
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafe0089be627c442800be4bcc175d28
+      internalID: -3177381576712507982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519521f184d582442aa34af4fcd85d23
+      internalID: -3592965311147038830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 160
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f6148ea598c6e4c9f00f72b7708a48
+      internalID: -3476063432020865609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_6
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 160
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063511614d6487547a08862689eaf16a
+      internalID: 7048421474521775034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 160
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d830af98e3021459071fd40ad78e7f
+      internalID: -3808450857065893963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc27eeb4042ebff4dbc92c50b61b3a84
+      internalID: -2003361639505271430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_9
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f93b23d7851634a9aa6b2e3e8a8dca
+      internalID: -3478674770195928441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_10
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b462f5b96a6a9fd4285db2d6a78d81cf
+      internalID: -1309046173574958558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continueGame_11
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 245
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51465fcc868ab7046b2d14dbe900c11d
+      internalID: -2116666375466457277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

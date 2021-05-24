@@ -14,7 +14,7 @@ public class CloudAnimation : MonoBehaviour
     {
         // Change rendering order.
         mr = GetComponent<MeshRenderer>();
-        mr.sortingLayerName = SortingLayer.Foreground.ToString();
+        mr.sortingLayerName = "Foreground";
         mr.sortingOrder = 0;
     }
 

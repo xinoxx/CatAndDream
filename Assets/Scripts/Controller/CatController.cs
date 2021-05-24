@@ -8,8 +8,7 @@ public class CatController : MonoBehaviour
     // Singleton mode
     public static CatController instance;
 
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private Vector2 initPos = Vector2.zero; // Initial position when game starts.
+    [SerializeField] private float moveSpeed = 5.0f;
     //[SerializeField] private GameObject myBag = null;
 
     private Animator anim;
@@ -30,15 +29,12 @@ public class CatController : MonoBehaviour
         {
             if (instance != this) Destroy(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        transform.position = initPos;
 
         horizontalMovingId = Animator.StringToHash("horizontalMoving");
         idleId = Animator.StringToHash("idle");

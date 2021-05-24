@@ -6,55 +6,79 @@ using UnityEngine.Video;
 
 public class LoadManager : MonoBehaviour
 {
+    public static LoadManager instance;
     [SerializeField] private GameObject loadAnim = null;
 
-    public void LoadNextLevelWithAnim()
+    private bool noDataHint = false;
+
+    private void Awake()
     {
-        StartCoroutine(LoadLevelWithAnim());
+        if (instance == null) instance = this;
+        else
+        {
+            if (instance != null) Destroy(gameObject);
+        }
     }
 
-    IEnumerator LoadLevelWithAnim()
+    public void LoadLevelWithAnim(int sceneNum)
     {
-        loadAnim.SetActive(true);
+        PlayerPrefs.DeleteAll();
+        StartCoroutine(LoadWithAnim(sceneNum, loadAnim));
+    }
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    public void LoadTargetLevel(int sceneNum)
+    {
+        StartCoroutine(LoadLevel(sceneNum));
+    }
+
+    public void LoadContinueLevel(GameObject anim)
+    {
+        bool result = DataManager.instance.LoadGame();
+        if (result)
+        {
+            Save saveObj = DataManager.instance.saveInfo;
+            StartCoroutine(LoadWithAnim(saveObj.sceneNum, anim));
+        }
+        else
+            noDataHint = true;
+    }
+
+    public void PopHint(GameObject pop)
+    {
+        if (noDataHint)
+            pop.SetActive(true);
+    }
+
+    IEnumerator LoadWithAnim(int sceneNum, GameObject anim)
+    {
+        anim.SetActive(true);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneNum);
         operation.allowSceneActivation = false;
 
         // When the button animation has finished and the next scene has been loaded, jump to the next scene.
         while (!operation.isDone)
         {
-            if (operation.progress >= 0.9f && loadAnim.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            if (operation.progress >= 0.9f && anim.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            {
                 operation.allowSceneActivation = true;
+            }
             yield return null;
         }
     }
 
-    /*public void LoadNextLevel()
+    IEnumerator LoadLevel(int sceneNum)
     {
-        LoadLevel();
-    }
-
-    IEnumerator LoadLevel()
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneNum);
         operation.allowSceneActivation = false;
 
-        while(!operation.isDone)
+        while (!operation.isDone)
         {
-            bool condition = transitionCondition();
-            if (operation.progress >= 0.9f && condition)
+            if (operation.progress >= 0.9f)
+            {
                 operation.allowSceneActivation = true;
+            }
             yield return null;
         }
     }
-
-    private bool transitionCondition()
-    {
-        if (rawImage != null)
-        {
-            VideoPlayer vp = rawImage.GetComponent<VideoPlayer>();
-            return vp.frame >= (long)vp.frameCount - 1;
-        }
-        return true;
-    }*/
 }

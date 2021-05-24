@@ -30,8 +30,11 @@ public class DivinationAnimEvent : MonoBehaviour
             resultPanel.transform.GetChild(gameScript.tossTimes-1).gameObject.SetActive(true);
         }
 
-        // Enable the toss button.
-        gameScript.tossButton.GetComponent<Button>().enabled = true;
+        if (gameScript.tossTimes < 6)
+        {
+            // Enable the toss button.
+            gameScript.tossButton.GetComponent<Button>().enabled = true;
+        }
     }
 
     public void DisallowTossButton()

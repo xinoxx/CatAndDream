@@ -1,43 +1,72 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScreenFader : MonoBehaviour
 {
-    [SerializeField] private Image blackImage = null;
+    [SerializeField] private Image blackIn = null;
+    [SerializeField] private Image whiteIn = null;
+    [SerializeField] private Image outImage = null;
+    [SerializeField] private string fadeInType = "black";
 
     private float alpha = 1.0f;
 
     void Start()
     {
-        StartCoroutine(FadeIn());
+        StartCoroutine(FadeIn(fadeInType));
     }
 
-    /*void Update()
+    public void FadeTo(string type)
     {
-        if (vp.frame >= (long)vp.frameCount - 1)
-            TransitionByVideoAndFadeIn();
-    }*/
+        StartCoroutine(FadeOut(type));
+    }
 
-    /*private void TransitionByVideoAndFadeIn()
+    IEnumerator FadeIn(string type)
     {
-        // The video ends and then fades in.
-        cutscene.gameObject.SetActive(false);
-        blackImage.gameObject.SetActive(true);
-
-        StartCoroutine(FadeIn());
-    }*/
-
-    IEnumerator FadeIn()
-    {
-        while (alpha > 0)
+        if (type.Equals("black"))
         {
-            alpha -= Time.deltaTime;
-            blackImage.color = new Color(0, 0, 0, alpha);
+            blackIn.gameObject.SetActive(true);
+            alpha = 1.0f;
+            while (alpha > 0)
+            {
+                alpha -= Time.deltaTime;
+                blackIn.color = new Color(0, 0, 0, alpha);
+                yield return null;
+            }
+            blackIn.gameObject.SetActive(false);
+        }
+        else if (type.Equals("white"))
+        {
+            whiteIn.gameObject.SetActive(true);
+            alpha = 1.0f;
+            while (alpha > 0)
+            {
+                alpha -= Time.deltaTime;
+                whiteIn.color = new Color(255, 255, 255, alpha);
+                yield return null;
+            }
+            whiteIn.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator FadeOut(string type)
+    {
+        outImage.gameObject.SetActive(true);
+        alpha = 0.0f;
+        while (alpha < 1)
+        {
+            alpha += Time.deltaTime;
+            if (type.Equals("white"))
+                outImage.color = new Color(255, 255, 255, alpha);
+            else if (type.Equals("black"))
+            {
+                outImage.color = new Color(0, 0, 0, alpha);
+            }
             yield return null;
         }
-        blackImage.gameObject.SetActive(false);
+        LoadManager.instance.LoadTargetLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }

@@ -12,6 +12,20 @@ public class DivinationBook : MonoBehaviour
     [SerializeField] private List<Sprite> pages = new List<Sprite>();
     private int pageNum = 0;
 
+    void Update()
+    {
+        isMoving();
+    }
+
+    private void isMoving()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     void Start()
     {
         leftButton = transform.GetChild(0).gameObject;
@@ -25,9 +39,6 @@ public class DivinationBook : MonoBehaviour
         divinationBook.gameObject.SetActive(false);
         gameObject.SetActive(true);
         checkHint.SetActive(false);
-
-        // Disable cat movement.
-        GameObject.FindGameObjectWithTag(TagContants.PLAYER).gameObject.GetComponent<CatController>().enabled = false;
     }
 
     public void PageTurnForward()

@@ -8,7 +8,7 @@ public class SecretNum : MonoBehaviour
     [SerializeField] private Sprite newImage = null;
     [SerializeField] private Sprite originalImage = null;
     private bool isChanged = false;
-    public char number = '0';
+    public char charNum = '0';
 
     public void ChangeImage()
     {
@@ -17,13 +17,13 @@ public class SecretNum : MonoBehaviour
         if (!isChanged)
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().sprite = newImage;
-            number = '1';
+            charNum = '1';
             isChanged = true;
         }
         else
         {
             transform.GetChild(0).gameObject.GetComponent<Image>().sprite = originalImage;
-            number = '0';
+            charNum = '0';
             isChanged = false;
         }
     }
