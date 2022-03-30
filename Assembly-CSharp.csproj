@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Managers\EndManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameRoot.cs" />
      <Compile Include="Assets\Scripts\Managers\LoadManager.cs" />
      <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
      <Compile Include="Assets\Scripts\Managers\UiCursorManager.cs" />
@@ -97,6 +98,13 @@
      <Compile Include="Assets\Scripts\SecretBox\CheckSecret.cs" />
      <Compile Include="Assets\Scripts\SecretBox\EmptySecretBox.cs" />
      <Compile Include="Assets\Scripts\SecretBox\SecretNum.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\BasePanel.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\ContinueHintPanel.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\HelpPanel.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\SettingPanel.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\StartPanel.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\UIMethods.cs" />
+     <Compile Include="Assets\Scripts\UIFrame\UIType.cs" />
      <Compile Include="Assets\Scripts\Utils\SceneContants.cs" />
      <Compile Include="Assets\Scripts\Utils\TagContants.cs" />
  <Reference Include="Unity.Timeline.Editor">

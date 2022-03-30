@@ -1,15 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video;
 
 public class LoadManager : MonoBehaviour
 {
     public static LoadManager instance;
-    [SerializeField] private GameObject loadAnim = null;
-
-    private bool noDataHint = false;
+    [SerializeField] public GameObject loadAnim = null;
 
     private void Awake()
     {
@@ -31,28 +27,20 @@ public class LoadManager : MonoBehaviour
         StartCoroutine(LoadLevel(sceneNum));
     }
 
-    public void LoadContinueLevel(GameObject anim)
+    public void LoadContinueLevel()
     {
-        bool result = DataManager.instance.LoadGame();
-        if (result)
-        {
-            Save saveObj = DataManager.instance.saveInfo;
-            StartCoroutine(LoadWithAnim(saveObj.sceneNum, anim));
-        }
-        else
-            noDataHint = true;
+        Save saveObj = DataManager.instance.saveInfo;
+        StartCoroutine(LoadWithAnim(saveObj.sceneNum, loadAnim));
     }
 
-    public void PopHint(GameObject pop)
+    public bool CheckData()
     {
-        if (noDataHint)
-            pop.SetActive(true);
+        bool result = DataManager.instance.LoadGame();
+        return result;
     }
 
     IEnumerator LoadWithAnim(int sceneNum, GameObject anim)
     {
-        anim.SetActive(true);
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneNum);
         operation.allowSceneActivation = false;
 
@@ -65,6 +53,9 @@ public class LoadManager : MonoBehaviour
             }
             yield return null;
         }
+        
+        // 清空UI栈内的panel
+        GameRoot.GetInstance().UIManager_Root.Pop(true);
     }
 
     IEnumerator LoadLevel(int sceneNum)

@@ -1,23 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-public class DataManager : MonoBehaviour
+public class DataManager
 {
     public static DataManager instance;
     [HideInInspector] public Save saveInfo;
 
-    // Singleton Mode
-    void Awake()
+    public static DataManager GetInstance()
     {
-        if (instance == null) instance = this;
-        else
+        if (instance == null)
         {
-            if (instance != null) Destroy(gameObject);
+            Debug.LogError("DataManager实例不存在！");
+            return instance;
         }
+        return instance;
+    }
+
+    public DataManager()
+    {
+        instance = this;
     }
 
     // Object(Save.Type) --> JSON(string)
@@ -61,7 +63,7 @@ public class DataManager : MonoBehaviour
         saveObj.playerPos = playerPos;
         SaveByJson(saveObj);
 
-        print("file location:" + Application.dataPath + "/JSONData.text");
+        Debug.Log("file location:" + Application.dataPath + "/JSONData.text");
     }
 
     public bool LoadGame()

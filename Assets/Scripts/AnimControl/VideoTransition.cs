@@ -31,9 +31,9 @@ public class VideoTransition : MonoBehaviour
 
         while (!operation.isDone)
         {
-            if (audioSource.volume < AudioManager.audioValue)
+            if (audioSource.volume < AudioManager.instance.audioValue)
             {
-                audioSource.volume = Mathf.Lerp(audioSource.volume, AudioManager.audioValue, Time.deltaTime * bgmSpeed);
+                audioSource.volume = Mathf.Lerp(audioSource.volume, AudioManager.instance.audioValue, Time.deltaTime * bgmSpeed);
             }
             if (vp.frame > 650 && audioSource.volume > 0)
             {

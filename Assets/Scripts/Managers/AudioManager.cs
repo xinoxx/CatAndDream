@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public Slider audioSlider;
     public AudioSource audioSource;
 
-    [HideInInspector] public static float audioValue = 1.0f;
+    [HideInInspector] public float audioValue = 0.8f;
 
     void Awake()
     {
@@ -25,9 +21,13 @@ public class AudioManager : MonoBehaviour
         audioSource.volume = audioValue;
     }
 
-    public void VolumnControl()
+    /// <summary>
+    /// 修改音量大小
+    /// </summary>
+    /// <param name="value">当前音量的值</param>
+    public void VolumnControl(float value)
     {
-        audioSource.volume =  audioSlider.value;
-        audioValue = audioSlider.value;
+        audioSource.volume = value;
+        audioValue = value;
     }
 }
